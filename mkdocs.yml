@@ -1,0 +1,14 @@
+site_name: "IABD-SAA: Sistemes d'aprenentatge automàtic"
+dev_addr: 127.0.0.1:4567
+
+theme:
+  name: material
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - awesome-pages
