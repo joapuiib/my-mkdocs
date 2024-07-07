@@ -2,6 +2,16 @@
 !!! note
     Prova
 
+Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+{ .annotate }
+
+1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be expressed in Markdown.
+
+```python
+print("Hello world!")
+```
+
 ## Resultats d'aprenentatge
 1. Caracteritza la Intel·ligència Artificial forta i dèbil determinant-ne usos i possibilitats.
     a) S'han determinat les especificitats de la Intel·ligència Artificial forta i dèbil.
