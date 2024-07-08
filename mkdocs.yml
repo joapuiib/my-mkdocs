@@ -1,11 +1,29 @@
-site_name: "IABD-SAA: Sistemes d'aprenentatge automàtic"
+site_name: "My Docs"
 dev_addr: 127.0.0.1:4567
+
+extra:
+  teacher:
+    name: "Joan Puigcerver Ibáñez"
+    email: "j.puigcerveribanez@edu.gva.es"
 
 theme:
   name: material
   features:
     - content.code.copy
     - content.code.annotate
+  icon:
+    admonition:
+      example: material/format-list-numbered
+
+extra_css:
+  - stylesheets/admonitions.css
+  - stylesheets/cover.css
+
+plugins:
+  - search
+  - awesome-pages
+  - macros:
+      include_dir: snippets
 
 markdown_extensions:
   - admonition
@@ -24,7 +42,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-plugins:
-  - search
-  - awesome-pages
+        
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true

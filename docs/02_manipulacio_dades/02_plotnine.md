@@ -1,1 +1,0 @@
-# Visualització de les dades
