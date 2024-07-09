@@ -1,4 +1,6 @@
-# Guia didàctica
+---
+title: Guia didàctica
+---
 !!! note
     Prova
 

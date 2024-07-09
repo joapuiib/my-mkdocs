@@ -1,14 +1,3 @@
-site_name: "My Docs"
-dev_addr: 127.0.0.1:4567
-
-theme:
-  name: material-joapuiib
-  cover: cipfp-mislata
-
-author:
-  name: Joan Puigcerver
-  email: j.puigcerveribanez@edu.gva.es
-
 plugins:
   - search
   - awesome-pages

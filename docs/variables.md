@@ -1,12 +1,10 @@
 ---
 title: Variables
-subtitle: Custom subtitle
 ---
 
-# Variables
 Welcome to {{ config.site_name }}!
 
-My name is {{ teacher.name }} and my email is {{ teacher.email }}.
+My name is {{ config.author.name }} and my email is {{ config.author.email }}.
 
 {{ macros_info() }}
 

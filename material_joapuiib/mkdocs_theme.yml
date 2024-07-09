@@ -1,0 +1,14 @@
+extends: material
+
+features:
+  - content.code.copy
+  - content.code.annotate
+  - search.suggest
+
+icon:
+  admonition:
+    example: material/format-list-numbered
+
+teacher:
+  name: Teacher Name
+  email: teacher@localhost

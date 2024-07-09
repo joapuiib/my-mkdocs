@@ -1,4 +1,6 @@
-# Latex
+---
+title: Latex
+---
 Prova d'una formula amb Latex.
 
 $$

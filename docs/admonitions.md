@@ -1,4 +1,6 @@
-# Alertes
+---
+title: Admonitions
+---
 ## Built-in admonitions
 !!! note
     Alerta d'annotació `note`

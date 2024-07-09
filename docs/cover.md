@@ -4,8 +4,6 @@ subtitle: Custom subtitle
 curs: '24/25'
 ---
 
-{% include "cipfp_mislata_cover.md" %}
-
 ## Conceptes bàsics
 ### Informàtica, binari, digital i software
 
