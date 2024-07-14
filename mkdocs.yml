@@ -1,56 +1,13 @@
-site_name: "My Docs"
+INHERIT: common_config.yml
+
+site_name: "Material joapuiib"
 dev_addr: 127.0.0.1:4567
+
+repo_name: mkdocs-material-joapuiib
+repo_url: https://github.com/joapuiib/mkdocs-material-joapuiib
 
 theme:
   name: material-joapuiib
   cover: cipfp-mislata
-
-author:
-  name: Joan Puigcerver
+  author: Joan Puigcerver Ibáñez
   email: j.puigcerveribanez@edu.gva.es
-
-plugins:
-  - search
-  - awesome-pages
-  - macros
-  - i18n:
-      languages:
-        - locale: ca
-          default: true
-          name: Valencià
-          admonition_translations:
-            note: Nota
-            abstract: Resum
-            tip: Consell
-            success: Èxit
-            question: Pregunta
-            warning: Advertència
-            failure: Error
-            danger: Perill
-            example: Exemple
-            quote: Cita
-            docs: Documentació
-            solution: Solució
-
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - attr_list
-  - md_in_html
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.arithmatex:
-      generic: true
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true

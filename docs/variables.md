@@ -4,7 +4,7 @@ title: Variables
 
 Welcome to {{ config.site_name }}!
 
-My name is {{ config.author.name }} and my email is {{ config.author.email }}.
+My name is {{ config.theme.author }} and my email is {{ config.theme.email }}.
 
 {{ macros_info() }}
 

@@ -1,6 +1,6 @@
 plugins:
-  - search
-  - awesome-pages
+  - material/search
+  - awesome-pages # Navegació
   - macros
   - i18n:
       languages:
@@ -22,6 +22,7 @@ plugins:
             solution: Solució
 
 markdown_extensions:
+  - abbr
   - admonition
   - pymdownx.details
   - pymdownx.superfences

@@ -4,31 +4,15 @@ subtitle: Custom subtitle
 curs: '24/25'
 ---
 
-## Conceptes bàsics
-### Informàtica, binari, digital i software
+## Heading 2
+### Heading 3
 
-La paraula __informàtica__ ve d'"informació" i "automàtica". La informació és un conjunt de dades,
-i automàtic és que funciona per si mateix. D'aquesta manera, la informàtica és la ciència que estudia
-el tractament de la informàció d'una mitjançant un sistemà automàtic, com pot ser un ordinador.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id metus diam. Aliquam condimentum libero eu tortor facilisis viverra. Suspendisse potenti. Sed a viverra justo, a placerat purus. Sed ornare velit vel tortor placerat, non porta risus pulvinar. Cras vel mattis erat. Curabitur id eros quis nisl cursus posuere. Curabitur viverra eleifend efficitur. Vivamus ut auctor enim, vel tempor justo. Fusce in pretium magna. Integer leo tortor, eleifend vitae aliquet ut, congue at enim.
 
-La informàtica permet automatitzar el processament de la informació. Tota la informació que utilitza un
-"ordinador" ha d'estar representada en una seqüència de zeros i uns (dígits) anomenada __codi binari__.
-Això significa que cada unitat bàsica d'informació pot tenir dos estats (0, 1). A aquesta unitat se'l coneix
-com a __bit__ o _binary digit_ (b) i al conjunt de huit bits s'anomena __byte__ (B). Un byte pot representar $2^8$
-caràcters, és a dir, 256 possibilitats diferents ([Taula ASCII](https://ca.wikipedia.org/wiki/ASCII)).
+Morbi maximus justo felis, vel molestie nisl rutrum vitae. Integer sit amet eros ut diam dictum scelerisque vitae id nulla. Donec urna dolor, condimentum eget ante dignissim, blandit porttitor tellus. Integer bibendum sem et nulla sollicitudin, vitae finibus lacus dapibus. Mauris eget felis vitae quam mollis sollicitudin. Nunc scelerisque leo blandit purus porttitor lacinia. Aliquam sed tristique odio. Vivamus maximus enim mauris, vitae condimentum velit faucibus vel. Nam varius, nulla vitae mattis convallis, sem eros hendrerit urna, at malesuada massa libero nec mi.
 
-Quan un dispositiu qualsevol utilitza o emmagatzema informació en forma de bits diem que aquest dispositiu és digital.
-Quan el mecanisme que utilitza no és mitjançant aquest codi, com un rellotge clàssic o un termòmetre de mercuri, diem que és analògic.
+Curabitur id sollicitudin arcu. Nunc turpis nunc, gravida eu scelerisque sit amet, varius in arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat convallis justo ullamcorper molestie. Mauris ultrices consectetur vestibulum. Pellentesque odio libero, maximus at augue nec, dictum tempus libero. Donec auctor nulla nunc, quis ultrices elit feugiat sed. Cras laoreet commodo justo, at interdum ante tincidunt quis. Cras quis ante in lacus bibendum ultrices nec eget erat. In fermentum mollis feugiat. Praesent placerat interdum augue, id gravida erat ultrices malesuada. Nunc in ante et tortor interdum sodales. Integer gravida turpis mauris, consectetur varius massa hendrerit vel. Pellentesque et semper lacus, vitae commodo turpis. Quisque consequat purus ut risus faucibus, non imperdiet nisi convallis.
 
-El __programari (software)__ és la part intangible d'un sistema informàtic, equivalent a
-l'equipament lògic. Tot programari està dissenyat per fer una tasca determinada al nostre sistema.
-Dins d'aquest programari podem distingir dos tipus diferents.
+Cras tempor congue vulputate. Nulla semper arcu vel urna suscipit hendrerit in ut enim. Mauris accumsan, dui ac venenatis mattis, arcu lorem ornare nunc, a ullamcorper odio tortor ut ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin nulla velit, placerat ac tempus id, scelerisque eget nisi. In malesuada, metus ac semper eleifend, urna neque varius enim, at tincidunt enim nisi pretium ante. Cras facilisis neque vel massa laoreet, mattis tempor arcu ornare. Etiam sed ante ac dolor fermentum suscipit a vitae nulla. Suspendisse ut arcu ut turpis congue tempor. Nunc venenatis fermentum enim, id placerat nisi pharetra quis. Donec commodo erat quis rutrum consectetur. Duis ultricies venenatis neque, eu scelerisque ante consectetur et. Curabitur nec nulla felis. Curabitur elementum dapibus tortor, sed dapibus tellus semper ac.
 
-D'una banda, tenim les __aplicacions__, programari instal·lat sobre el sistema operatiu
-amb la funcio de realitzar una tasca en concret (editar document, reproduir música,...)
-
-Per una banda, tenim el __sistema operatiu__, un programari amb la funció de proporcionar una plataforma única
-per l'ús de la màquina, independentment del __maquinari (hardware)__ que està present. El sistema operatiu
-és l'encarregat de comunicar-se amb el maquinari.
-
-## Prova 2
+Pellentesque libero velit, sagittis eu erat a, semper elementum dolor. Vivamus finibus accumsan urna, nec condimentum massa pellentesque eget. Nullam sagittis massa ac consectetur condimentum. Nam nec pellentesque sapien, vel tempus ante. In iaculis maximus erat nec blandit. Curabitur vel purus commodo augue imperdiet rutrum. Vivamus sollicitudin dignissim sagittis. Pellentesque sit amet est consectetur lectus ullamcorper faucibus. Sed tristique consectetur eleifend. Duis ullamcorper ex congue, faucibus dui in, elementum nunc.
