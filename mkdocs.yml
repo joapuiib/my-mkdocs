@@ -1,5 +1,3 @@
-INHERIT: common_config.yml
-
 site_name: "Material joapuiib"
 dev_addr: 127.0.0.1:4567
 
@@ -11,3 +9,66 @@ theme:
   cover: cipfp-mislata
   author: Joan Puigcerver Ibáñez
   email: j.puigcerveribanez@edu.gva.es
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        # icon: material/toggle-switch
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        # icon: material/toggle-switch-off-outline
+        icon: material/weather-night
+        name: Switch to light mode
+
+plugins:
+  - material/search
+  - awesome-pages # Navegació
+  - macros
+  - i18n:
+      languages:
+        - locale: ca
+          default: true
+          name: Valencià
+          admonition_translations:
+            note: Nota
+            abstract: Resum
+            tip: Consell
+            success: Èxit
+            question: Pregunta
+            warning: Advertència
+            failure: Error
+            danger: Perill
+            example: Exemple
+            quote: Cita
+            docs: Documentació
+            solution: Solució
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true

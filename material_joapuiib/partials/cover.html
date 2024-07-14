@@ -16,9 +16,17 @@
 {% set logo = '/img/logo_mislata.png' %}
 
 
-<div class="page">
-<div class="cover text-center">
-<img class="mx-auto" src={{ logo }} alt="logo">
+<div class="cover">
+
+{% block background %}
+{% include "partials/cover/cipfp-mislata/background.html" %}
+{% endblock %}
+
+<div class="content">
+
+{% block logo %}
+<img class="" src={{ logo }} alt="logo">
+{% endblock %}
 
 <h1>{{ title }}</h1>
 
@@ -53,7 +61,7 @@
     <img class="" src="/img/license/{{ license.lower() }}.png" alt="Licence"/>
 </a>
 </div><!--license-->
+</div><!--content-->
 </div><!--cover-->
-</div><!--page-->
 
 {% endif %}
