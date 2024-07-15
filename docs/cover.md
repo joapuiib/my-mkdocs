@@ -1,4 +1,5 @@
 ---
+template: document.html
 title: Custom cover
 subtitle: Custom subtitle
 curs: '24/25'
