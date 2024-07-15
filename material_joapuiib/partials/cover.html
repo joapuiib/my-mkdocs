@@ -13,7 +13,8 @@
 {% set license_desc = page.meta.license_desc or config.license_desc or '(Reconeixement - No Comercial - Compartir Igual)' %}
 {% set license_url = 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca' %}
 
-{% set logo = '../img/logo_mislata.png' %}
+{% set logo = 'img/logo_mislata.png' %}
+{% set license_img = 'img/license/' + license.lower() + '.png' %}
 
 
 <div class="cover">
@@ -25,7 +26,7 @@
 <div class="content">
 
 {% block logo %}
-<img class="cover-logo" src={{ logo }} alt="logo">
+<img class="cover-logo" src="{{ logo | url }}" alt="logo">
 {% endblock %}
 
 <h1>{{ title }}</h1>
@@ -59,7 +60,7 @@
 
 <div class="license-img">
 <a href="{{ license_url }}" target="_blank">
-    <img class="" src="../img/license/{{ license.lower() }}.png" alt="Licence"/>
+    <img class="" src="{{ license_img | url }}" alt="Licence"/>
 </a>
 </div>
 
