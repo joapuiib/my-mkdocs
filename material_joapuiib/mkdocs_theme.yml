@@ -8,6 +8,10 @@ features:
   - content.tooltips
   - navigation.top
   - navigation.footer
+  - navigation.instant
+  - navigation.instant.progress
+  - navigation.indexes
+  - navigation.tabs
 
 icon:
   admonition:
