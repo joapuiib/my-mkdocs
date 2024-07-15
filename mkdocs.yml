@@ -9,22 +9,8 @@ theme:
   cover: cipfp-mislata
   author: Joan Puigcerver Ibáñez
   email: j.puigcerveribanez@edu.gva.es
-
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        # icon: material/toggle-switch
-        icon: material/weather-sunny
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        # icon: material/toggle-switch-off-outline
-        icon: material/weather-night
-        name: Switch to light mode
+  icon:
+    logo: octicons/book-16
 
 plugins:
   - material/search
@@ -48,6 +34,7 @@ plugins:
             quote: Cita
             docs: Documentació
             solution: Solució
+  - git-revision-date-localized
 
 markdown_extensions:
   - abbr
