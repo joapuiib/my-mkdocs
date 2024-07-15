@@ -6,14 +6,12 @@ features:
   - content.code.copy
   - content.code.annotate
   - content.tooltips
+  - navigation.top
+  - navigation.footer
 
 icon:
   admonition:
     example: material/format-list-numbered
-
-teacher:
-  name: Teacher Name
-  email: teacher@localhost
 
 # Palette toggle for light mode
 palette:
@@ -31,3 +29,9 @@ palette:
       # icon: material/toggle-switch-off-outline
       icon: material/weather-night
       name: Switch to light mode
+
+license:
+  type: "CC BY-NC-SA 4.0"
+  text: "(Reconeixement-NoComercial-CompartirIgual) &#x1f16d;"
+  link: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca
+  image: img/license/by-nc-sa.png

@@ -3,18 +3,40 @@
 {% if cover %}
 
 {% set title = page.title %}
-{% set subtitle = page.meta.subtitle %}
-{% set author = page.meta.author or config.theme.author or config.get('author', {}).get('name') or None %}
-{% set email = page.meta.email or config.theme.email or config.get('author', {}).get('email') or None %}
-{% set curs = page.meta.curs %}
-{% set original_author = page.meta.original_author %}
+{% set author = config.site_author %}
+{% set email = config.site_email %}
+{% set license_type = config.theme.license.type %}
+{% set license_text = config.theme.license.text %}
+{% set license_link = config.theme.license.link %}
+{% set license_image = config.theme.license.image %}
 
-{% set license = page.meta.license or config.license or 'BY-NC-SA' %}
-{% set license_desc = page.meta.license_desc or config.license_desc or '(Reconeixement - No Comercial - Compartir Igual)' %}
-{% set license_url = 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca' %}
+{% if page.meta %}
+{% set subtitle = page.meta.subtitle %}
+{% set curs = page.meta.curs %}
+{% if page.meta.author is defined %}
+{% set author = page.meta.author %}
+{% endif %}
+{% if page.meta.email is defined %}
+{% set email = page.meta.email %}
+{% endif %}
+{% if page.meta.original_author is defined %}
+{% set original_author = page.meta.original_author %}
+{% endif %}
+{% if page.meta.license_type is defined %}
+{% set license_type = page.meta.license_type %}
+{% endif %}
+{% if page.meta.license_text is defined %}
+{% set license_text = page.meta.license_text %}
+{% endif %}
+{% if page.meta.license_link is defined %}
+{% set license_link = page.meta.license_link %}
+{% endif %}
+{% if page.meta.license_image is defined %}
+{% set license_image = page.meta.license_image %}
+{% endif %}
+{% endif %}
 
 {% set logo = 'img/logo_mislata.png' %}
-{% set license_img = 'img/license/' + license.lower() + '.png' %}
 
 
 <div class="cover">
@@ -53,16 +75,18 @@
 <p>Aquest material és una obra derivada a partir del material de: <strong>{{ original_author }}</strong></p>
 {% endif %}
 
-<p><strong>Llicència: {{ license }}</strong></p>
-{% if license_desc %}
-<p class="">{{license_desc}}</p>
+<p><strong>Llicència: {{ license_type }}</strong></p>
+{% if license_text %}
+<p class="">{{license_text}}</p>
 {% endif %}
 
+{% if license_image %}
 <div class="license-img">
-<a href="{{ license_url }}" target="_blank">
-    <img class="" src="{{ license_img | url }}" alt="Licence"/>
+<a href="{{ license_link }}" target="_blank">
+    <img class="" src="{{ license_image | url }}" alt="Licence"/>
 </a>
 </div>
+{% endif %}
 
 </div><!--license-->
 </div><!--content-->

@@ -3,7 +3,26 @@ template: document.html
 title: Custom cover
 subtitle: Custom subtitle
 curs: '24/25'
+original_author: Carmen
+license_type: Copyright
+license_text: "All rights reserved &copy; 2021"
+license_image: False
 ---
+
+## Frontmatter
+```yml
+---
+template: document.html
+title: Custom cover
+subtitle: Custom subtitle
+curs: '24/25'
+original_author: Carmen
+license_type: Copyright
+license_text: "All rights reserved &copy; 2021"
+license_image: False
+---
+```
+
 
 ## Heading 2
 ### Heading 3

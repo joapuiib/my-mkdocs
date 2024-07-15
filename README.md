@@ -7,7 +7,7 @@ Podeu veure una demostració del tema a [joapuiib.github.io/mkdocs-material-joap
 ## Característiques
 Aquest tema inclou les següents característiques:
 - Portades per als documents amb la plantilla `document.html`.
-- [Admonitions](https://squidfunk.github.io/mkdocs-material/extensions/admonition/): S'inclouen les alertes `docs`, `spoiler` i `solution`.
+- [Admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/): S'inclouen les alertes `docs`, `spoiler` i `solution`.
 - S'habilita per defecte KaTeX per a escriure fórmules matemàtiques.
 
 ## Instal·lació

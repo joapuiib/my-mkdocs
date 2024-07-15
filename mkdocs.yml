@@ -1,15 +1,23 @@
 site_name: "Material joapuiib"
 site_author: "Joan Puigcerver Ibáñez"
+site_email: "j.puigcerveribanez@edu.gva.es"
 dev_addr: 127.0.0.1:4567
 
 repo_name: mkdocs-material-joapuiib
 repo_url: https://github.com/joapuiib/mkdocs-material-joapuiib
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/joapuiib
+      name: joapuiib a GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/joanpuigcerver/
+      name: Joan Puigcerver a LinkedIn
+
 theme:
   name: material-joapuiib
   cover: cipfp-mislata
-  author: Joan Puigcerver Ibáñez
-  email: j.puigcerveribanez@edu.gva.es
   icon:
     logo: octicons/book-16
 
