@@ -1,4 +1,5 @@
 site_name: "Material joapuiib"
+site_author: "Joan Puigcerver Ibáñez"
 dev_addr: 127.0.0.1:4567
 
 repo_name: mkdocs-material-joapuiib

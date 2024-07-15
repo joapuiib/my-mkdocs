@@ -39,3 +39,7 @@ material-joapuiib = 'material_joapuiib'
 
 [tool.setuptools.dynamic]
 version = {attr = 'material_joapuiib.__version__'}
+
+[tool.setuptools.packages.find]
+include = ["material_joapuiib*"]
+exclude = ["site*", "tests*"]
