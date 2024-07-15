@@ -85,6 +85,18 @@
         <xhtml:link rel="alternate" hreflang="ca" href="Nonefeatures/admonitions/"/>
     </url>
     <url>
+        <loc>Nonefeatures/annotations/</loc>
+        <lastmod>2024-07-15</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ca" href="Nonefeatures/annotations/"/>
+    </url>
+    <url>
+        <loc>Nonefeatures/code_blocks/</loc>
+        <lastmod>2024-07-15</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ca" href="Nonefeatures/code_blocks/"/>
+    </url>
+    <url>
         <loc>Nonefeatures/cover/</loc>
         <lastmod>2024-07-15</lastmod>
         <changefreq>daily</changefreq>
