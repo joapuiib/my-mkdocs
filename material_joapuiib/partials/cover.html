@@ -48,7 +48,7 @@
 <div class="content">
 
 {% block logo %}
-<img class="cover-logo" src="{{ logo | url }}" alt="logo">
+<img class="cover-logo" src="{{ logo | url }}" alt="logo" height="200" />
 {% endblock %}
 
 <h1>{{ title }}</h1>
@@ -83,7 +83,7 @@
 {% if license_image %}
 <div class="license-img">
 <a href="{{ license_link }}" target="_blank">
-    <img class="" src="{{ license_image | url }}" alt="Licence"/>
+  <img class="" src="{{ license_image | url }}" alt="Licence" height="50" />
 </a>
 </div>
 {% endif %}
