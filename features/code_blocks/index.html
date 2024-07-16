@@ -37,6 +37,7 @@
 
     
     <link rel="stylesheet" href="../../stylesheets/admonitions.css">
+    <link rel="stylesheet" href="../../stylesheets/highlight.css">
     <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
 
     
@@ -1358,9 +1359,31 @@ lines in the code block.
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span>
 </span></code></pre></div>
 <h3 id="shell-block">Shell block</h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>joapuiib@FP:~/git_tutorial<span class="w"> </span><span class="o">(</span>main<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>lg
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>*<span class="w"> </span>c9fc6c8<span class="w"> </span>-<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>day<span class="w"> </span>ago<span class="o">)</span><span class="w"> </span>Changed<span class="w"> </span>README.md<span class="w"> </span>-<span class="w"> </span>Joan<span class="w"> </span>Puigcerver<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>main<span class="o">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>*<span class="w"> </span>8e70293<span class="w"> </span>-<span class="w"> </span><span class="o">(</span><span class="m">4</span><span class="w"> </span>days<span class="w"> </span>ago<span class="o">)</span><span class="w"> </span>Added<span class="w"> </span>Readme.md<span class="w"> </span>-<span class="w"> </span>Joan<span class="w"> </span>Puigcerver
+<div class="language-shellconsole highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp-uh">joapuiib@FP</span><span class="gp">:</span><span class="gp-d">~/git_tutorial</span><span class="gp"> </span><span class="gp-gb">(main)</span><span class="gp"> $ </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello world!&quot;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gp-ve">(venv)</span> <span class="gp-uh">joapuiib@FP</span><span class="gp">:</span><span class="gp-d">~/git_tutorial</span><span class="gp"> </span><span class="gp-gb">(main)</span><span class="gp"> $ </span>git<span class="w"> </span>diff
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="gh">diff --git a/README.md b/README.md</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="gh">index 6d747b3..ff524e4 100644</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="gd">--- a/README.md</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="gi">+++ b/README.md</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="gu">@@ -1,2 +1,4 @@</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w"> </span># Tutorial de Git
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w"> </span>Estem aprenent a utilitzar Git!
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="gi">+</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="gi">+Hem modificat un fitxer existent.</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="gd">-Hem eliminat un fitxer.</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="gp-uh">joapuiib@FP</span><span class="gp">:</span><span class="gp-d">~/git_tutorial</span><span class="gp"> </span><span class="gp-gb">(main)</span><span class="gp"> $ </span>git<span class="w"> </span>push
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="go">Total 0 (delta 0), reused 0 (delta 0), pack-reused 0</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="go">To /home/joapuiib/gitflow_example/remot</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="go">   0fb88ef..9e34bb0  develop -&gt; develop</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="gp-uh">joapuiib@FP</span><span class="gp">:</span><span class="gp-d">~/git_tutorial</span><span class="gp"> </span><span class="gp-gb">(main)</span><span class="gp"> $ </span>git<span class="w"> </span>lga
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="go">*</span><span class="w"> </span><span class="git-ch">f853946</span><span class="go"> - </span><span class="git-cd">(7 minutes ago)</span><span class="git-cm"> README: Afegits autors - </span><span class="git-ca">Mar </span><span class="git-r">(origin/feature/author)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="git-bl">| </span><span class="go">*</span><span class="w"> </span><span class="git-ch">cc8c388</span><span class="go"> - </span><span class="git-cd">(9 minutes ago)</span><span class="git-cm"> LICENSE: Afegida llicència - </span><span class="git-ca">Pau </span><span class="git-r">(origin/feature/license)</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="git-bl">|/  </span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="git-bl">| </span><span class="go">*</span><span class="w"> </span><span class="git-ch">9e34bb0</span><span class="go"> - </span><span class="git-cd">(15 minutes ago)</span><span class="git-cm"> README: Afegida descripció del projecte - </span><span class="git-ca">Anna </span><span class="git-r">(HEAD -&gt; develop, origin/develop, feature/readme, origin/feature/readme)</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="git-bl">|/  </span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="go">*</span><span class="w"> </span><span class="git-ch">0fb88ef</span><span class="go"> - </span><span class="git-cd">(29 minutes ago)</span><span class="git-cm"> 1. Primer commit - </span><span class="git-ca">Joan Puigcerver </span><span class="git-r">(origin/main, origin/HEAD, main)</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="gp">[</span><span class="gp-uh">user@host</span><span class="gp"> </span><span class="gp-d">~</span><span class="gp"> </span><span class="gp-gb">(main)</span><span class="gp">] $ </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="gp-ve">(venv)</span> <span class="gp">[</span><span class="gp-uh">user@host</span><span class="gp"> </span><span class="gp-d">~</span><span class="gp">] $ </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span>
 </span></code></pre></div>
 <h3 id="keyboard-keys">Keyboard keys</h3>
 <p><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-delete">Del</kbd></span></p>
@@ -1386,7 +1409,7 @@ lines in the code block.
     <span class="md-icon" title="Darrera actualització">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">15 de juliol del 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">16 de juliol del 2024</span>
   </span>
 
     
