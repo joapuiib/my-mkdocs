@@ -103,6 +103,12 @@
         <xhtml:link rel="alternate" hreflang="ca" href="Nonefeatures/cover/"/>
     </url>
     <url>
+        <loc>Nonefeatures/icons/</loc>
+        <lastmod>2024-07-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ca" href="Nonefeatures/icons/"/>
+    </url>
+    <url>
         <loc>Nonefeatures/latex/</loc>
         <lastmod>2024-07-16</lastmod>
         <changefreq>daily</changefreq>
