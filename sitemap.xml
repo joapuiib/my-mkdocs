@@ -115,6 +115,12 @@
         <xhtml:link rel="alternate" hreflang="ca" href="Nonefeatures/lists/"/>
     </url>
     <url>
+        <loc>Nonefeatures/slides/</loc>
+        <lastmod>2024-07-16</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ca" href="Nonefeatures/slides/"/>
+    </url>
+    <url>
         <loc>Nonefeatures/variables/</loc>
         <lastmod>2024-07-16</lastmod>
         <changefreq>daily</changefreq>
