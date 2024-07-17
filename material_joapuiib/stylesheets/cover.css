@@ -13,6 +13,11 @@ div.cover div.background svg {
     position: absolute;
 }
 
+div.cover div.logo img {
+   height: auto;
+   max-width: 100%;
+}
+
 div.cover div.content {
     flex-grow: 1;
     box-sizing: border-box;

@@ -17,9 +17,25 @@ extra:
 
 theme:
   name: material-joapuiib
-  cover: cipfp-mislata
   icon:
     logo: octicons/book-16
+
+  # Palette toggle for light mode
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        # icon: material/toggle-switch
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        # icon: material/toggle-switch-off-outline
+        icon: material/weather-night
+        name: Switch to light mode
 
 plugins:
   - material/search

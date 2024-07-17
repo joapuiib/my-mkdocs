@@ -5,38 +5,40 @@
 {% set title = page.title %}
 {% set author = config.site_author %}
 {% set email = config.site_email %}
+{% set cover_logo = config.theme.cover.logo %}
 {% set license_type = config.theme.license.type %}
 {% set license_text = config.theme.license.text %}
 {% set license_link = config.theme.license.link %}
 {% set license_image = config.theme.license.image %}
 
 {% if page.meta %}
-{% set subtitle = page.meta.subtitle %}
-{% set curs = page.meta.curs %}
-{% if page.meta.author is defined %}
-{% set author = page.meta.author %}
+  {% set subtitle = page.meta.subtitle %}
+  {% set curs = page.meta.curs %}
+  {% if page.meta.cover_logo %}
+    {% set cover_logo = page.meta.cover_logo %}
+  {% endif %}
+  {% if page.meta.author is defined %}
+    {% set author = page.meta.author %}
+  {% endif %}
+  {% if page.meta.email is defined %}
+    {% set email = page.meta.email %}
+  {% endif %}
+  {% if page.meta.original_author is defined %}
+    {% set original_author = page.meta.original_author %}
+  {% endif %}
+  {% if page.meta.license_type is defined %}
+    {% set license_type = page.meta.license_type %}
+  {% endif %}
+  {% if page.meta.license_text is defined %}
+    {% set license_text = page.meta.license_text %}
+  {% endif %}
+  {% if page.meta.license_link is defined %}
+    {% set license_link = page.meta.license_link %}
+  {% endif %}
+  {% if page.meta.license_image is defined %}
+    {% set license_image = page.meta.license_image %}
+  {% endif %}
 {% endif %}
-{% if page.meta.email is defined %}
-{% set email = page.meta.email %}
-{% endif %}
-{% if page.meta.original_author is defined %}
-{% set original_author = page.meta.original_author %}
-{% endif %}
-{% if page.meta.license_type is defined %}
-{% set license_type = page.meta.license_type %}
-{% endif %}
-{% if page.meta.license_text is defined %}
-{% set license_text = page.meta.license_text %}
-{% endif %}
-{% if page.meta.license_link is defined %}
-{% set license_link = page.meta.license_link %}
-{% endif %}
-{% if page.meta.license_image is defined %}
-{% set license_image = page.meta.license_image %}
-{% endif %}
-{% endif %}
-
-{% set logo = 'img/logo_mislata.png' %}
 
 
 <div class="cover">
@@ -48,7 +50,13 @@
 <div class="content">
 
 {% block logo %}
-<img class="cover-logo" src="{{ logo | url }}" alt="logo" height="200" />
+  <div class="logo">
+    {% if cover_logo.endswith('.svg') %}
+      {% include cover_logo %}
+    {% else %}
+      <img src="{{ cover_logo | url }}" alt="Logo" />
+    {% endif %}
+  </div>
 {% endblock %}
 
 <h1>{{ title }}</h1>

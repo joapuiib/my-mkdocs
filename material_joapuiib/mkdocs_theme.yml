@@ -2,6 +2,9 @@ extends: material
 
 language: ca
 
+cover:
+  logo: 'img/cover/cipfp-mislata.svg'
+
 features:
   - content.code.copy
   - content.code.annotate
