@@ -24,9 +24,12 @@ You can use the following syntax to include an icon:
 | `:devicons-python-plain-wordmark:` | :devicons-python-plain-wordmark: |
 
 
-## Emojis
+## Built-in icons
+A complete list can be found at https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
+
 :smile:
 :simple-4d:
+:material-language-java:
 
 ## Page icons
 In the frontmatter:
