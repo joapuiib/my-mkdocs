@@ -62,7 +62,15 @@
 <h1>{{ title }}</h1>
 
 {% if subtitle %}
-<h2>{{ subtitle }}</h2>
+{% if subtitle is string %}
+  <h2>{{ subtitle }}</h2>
+{% else %}
+  <div>
+  {% for sub in subtitle %}
+    <h2>{{ sub }}</h2>
+  {% endfor %}
+  </div>
+{% endif %}
 {% endif %}
 
 <div class="details">
