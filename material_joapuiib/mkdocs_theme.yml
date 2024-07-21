@@ -15,6 +15,8 @@ features:
   - navigation.instant.progress
   - navigation.indexes
   - navigation.tabs
+  - toc.follow
+
 
 icon:
   admonition:
