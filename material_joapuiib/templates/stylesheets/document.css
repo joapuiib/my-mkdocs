@@ -84,7 +84,6 @@
         display: block;
     }
     .cover {
-      /* Substract 1.5rem (if not, license image goes to different page) */
-      height: calc(100vh - 1.5rem - var(--md-document__header-content-height, 0px) - var(--md-document__footer-content-height, 0px) - var(--md-document__footer-print-height, 0px));
+       height: calc(100vh - 1.5rem - var(--md-document__header-content-height, 0px) - var(--md-document__footer-content-height, 0px) - var(--md-document__footer-print-height, 0px));
     }
 }

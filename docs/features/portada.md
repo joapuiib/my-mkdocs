@@ -6,8 +6,8 @@ cover:
 title: Portada
 print_title: cover-document
 subtitle: Subtítol personalitzat
-curs: '24/25'
-original_author: Carmen
+curs: '2024 – 2025'
+original_author: Carme
 license_type: Copyright
 license_text: "Tots els drets reservats &copy; 2021"
 license_image: False

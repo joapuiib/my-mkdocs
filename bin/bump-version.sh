@@ -123,7 +123,10 @@ sed -i "s/__version__ = '$CURRENT_VERSION'/__version__ = '$NEW_VERSION'/" "$VERS
 
 git add "$VERSION_FILE"
 if [[ "$MODE" == "amend" ]]; then
-    git commit --amend --no-edit
+    ORIG_MSG="$(git log -1 --pretty=%B)"
+    git commit --amend -m "$ORIG_MSG
+
+Bump version to $NEW_VERSION."
 else
     git commit -m "chore: bump version to $NEW_VERSION"
 fi
