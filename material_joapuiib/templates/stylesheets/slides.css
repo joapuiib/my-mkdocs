@@ -1,62 +1,406 @@
+/* ---------- Re-theme reveal.js (white theme) with the site's Material palette ---------- */
+
+:root > * {
+  --r-background-color: var(--md-default-bg-color);
+  --r-main-font: var(--md-text-font-family, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif);
+  --r-main-font-size: 2.4rem;
+  --r-main-color: var(--md-default-fg-color);
+  --r-heading-font: var(--md-text-font-family, inherit);
+  --r-heading-color: var(--md-default-fg-color);
+  --r-heading-text-transform: none;
+  --r-heading-font-weight: 700;
+  --r-heading1-size: 2.2em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1.1em;
+  --r-code-font: var(--md-code-font-family, monospace);
+  --r-link-color: var(--md-accent-fg-color);
+  --r-link-color-dark: var(--md-accent-fg-color);
+  --r-link-color-hover: var(--md-accent-fg-color);
+  --r-selection-background-color: var(--md-accent-fg-color);
+  --r-selection-color: var(--md-accent-bg-color, #fff);
+}
+
+:root > *[data-md-color-scheme="slate"] {
+  --r-overlay-element-bg-color: 255, 255, 255;
+  --r-overlay-element-fg-color: 0, 0, 0;
+}
+
+.reveal-viewport {
+  background-color: var(--r-background-color);
+}
+
+/* Break out of the Material content grid for a full-bleed presentation */
+html:has(.reveal),
+body:has(.reveal) {
+  height: 100%;
+}
+.md-main:has(.reveal),
+.md-container:has(.reveal),
+.md-main__inner:has(.reveal) {
+  display: block;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
 .reveal {
   width: 100%;
   aspect-ratio: 16 / 9;
 }
 
-/* column layout */
-.container{
-    display: flex;
-}
-.col{
-    flex: 1;
+/* Accent bar under the leading heading of each slide */
+.reveal .slides section > h1:first-child,
+.reveal .slides section > h2:first-child {
+  padding-bottom: 0.3em;
+  border-bottom: 0.15rem solid var(--md-primary-fg-color);
 }
 
+/* ---------- Title slide (first slide of the deck) — landing-page hero ---------- */
+
+.reveal .slides > section:first-child {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Decorative gradient blob behind the title, same recipe as the landing hero */
+.reveal .slides > section:first-child::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 140%;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 50% 60% at 30% 30%, var(--md-primary-fg-color) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 55% at 75% 65%, var(--md-primary-fg-color) 0%, transparent 65%);
+  opacity: 0.32;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+:root > *[data-md-color-scheme="slate"] .reveal .slides > section:first-child::before {
+  opacity: 0.28;
+}
+
+.reveal .slides > section:first-child > h1:first-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Subtitle right under the title (conventionally an h3) reads muted, not bold */
+.reveal .slides > section:first-child > h1:first-child + h3 {
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+}
+
+.reveal blockquote {
+  background-color: color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
+  border-left: 0.2rem solid var(--md-primary-fg-color);
+  border-radius: 0 0.4rem 0.4rem 0;
+  box-shadow: none;
+}
+
+.reveal pre {
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: var(--md-shadow-z2);
+}
 .reveal pre code {
-    padding: 1em;
+  padding: 1em;
+  border-radius: 0.5rem;
+  /* The white theme caps this at a fixed 400px regardless of how much room
+     the slide actually has — let it grow, just guard against code longer
+     than the viewport with overflow (inherited: auto). */
+  max-height: 70vh;
 }
 
-/* header */
-.reveal .header {
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  height: 1em;
-  z-index: 1000;
+/* Language chip, injected by the reveal_script block after highlighting */
+.reveal pre .code-lang {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2em 0.7em;
+  font-size: 0.45em;
+  font-family: var(--md-text-font-family, inherit);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-primary-bg-color);
+  background-color: var(--md-primary-fg-color);
+  border-radius: 0 0.5rem 0 0.5rem;
 }
 
-.reveal .header__item  {
-  display: block;
-  height: 100%;
-  fill: #000;
-  fill-opacity: 0.4;
-  transition: fill-opacity 0.2s ease-in-out;
-}
-.reveal .header__item:hover  {
-  fill-opacity: 0.6;
-}
-.reveal .header__item svg {
-  height: 100%;
+.reveal table td,
+.reveal table th {
+  border-bottom-color: var(--md-default-fg-color--lightest);
 }
 
-/* Print styles */
-html.reveal-print .reveal {
-   aspect-ratio: unset;
+.reveal .progress {
+  background-color: var(--md-default-fg-color--lightest);
 }
 
-html.reveal-print .reveal pre code {
-    overflow: unset;
-    text-wrap: auto;
-    max-height: unset;
+/* column layout */
+.container {
+  display: flex;
 }
-
-html.reveal-print .reveal .header {
-   display: none;
+.col {
+  flex: 1;
 }
 
 .center {
   text-align: center !important;
 }
 
-h1 {
+/* ---------- Site navigation (drawer + top tabs) ----------
+   Material shows the primary sidebar inline (sticky column) from 76.25em
+   up. The slides layout has no room for that column at any width, so force
+   the sidebar to always use the off-canvas/drawer positioning + toggle
+   transform it normally only gets below that breakpoint. The top tabs bar
+   isn't part of Material's drawer at all — it's normally permanent, in-flow
+   — but a slide deck shouldn't permanently lose height to it, so it's tied
+   to the same drawer toggle instead: hidden above the viewport until the
+   presenter opens navigation, shown together with the sidebar. */
+
+body:has(.reveal) .md-sidebar--primary {
+  position: fixed;
+  top: 0.4rem;
+  left: calc(var(--md-sidebar-primary-width) * -1);
+  height: calc(100% - 0.8rem);
+  width: var(--md-sidebar-primary-width);
+  background-color: var(--md-default-bg-color--light);
+  border-radius: 0.8rem;
+  -webkit-backdrop-filter: blur(0.4rem);
+  backdrop-filter: blur(0.4rem);
+  overflow: hidden;
+  transform: translateX(0);
+  transition: transform 0.15s cubic-bezier(0.5, 0, 0.5, 0), box-shadow 0.15s;
+  z-index: 2000;
+}
+
+body:has(.reveal) [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+  transform: translateX(calc(var(--md-sidebar-primary-width) + var(--md-sidebar-drawer-offset)));
+  box-shadow: var(--md-shadow-z3);
+  transition: transform 0.2s cubic-bezier(0.7, 0.7, 0.1, 1), box-shadow 0.2s;
+}
+
+body:has(.reveal) .md-overlay {
+  z-index: 1999;
+}
+
+body:has(.reveal) .md-tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1998;
+  /* A touch past -100% so the element's own box-shadow/border sliver
+     (which sits right at its edge) clears the viewport too. */
+  transform: translateY(calc(-100% - 0.2rem));
+  transition: transform 0.2s cubic-bezier(0.7, 0.7, 0.1, 1);
+}
+
+body:has(.reveal) [data-md-toggle="drawer"]:checked ~ .md-container .md-tabs {
+  transform: translateY(0);
+  box-shadow: var(--md-shadow-z2);
+}
+
+/* Keep the toolbar clear of the tabs bar instead of overlapping it once
+   navigation is opened. */
+body:has(.reveal) [data-md-toggle="drawer"]:checked ~ .slides-header .slides-toolbar {
+  top: 3.4rem;
+}
+
+/* The primary-color active-tab underline is normally a site.css rule (only
+   loaded by theme-base.html, which slides.html bypasses) — reproduce it
+   here instead of pulling in that whole unrelated stylesheet. */
+body:has(.reveal) .md-tabs__item--active {
+  --mx-tabs-active-underline: var(--md-primary-fg-color);
+}
+
+/* Material hides the drawer-toggle button from 76.25em up, assuming the
+   sidebar is shown inline there — not true here, it's always a drawer. */
+.slides-toolbar .md-header__button[for="__drawer"] {
+  display: inline-block !important;
+}
+
+html.reveal-print .md-sidebar--primary,
+html.reveal-print .md-overlay {
+  display: none;
+}
+
+/* ---------- Toolbar (palette toggle / export to PDF) ---------- */
+
+.md-header.slides-header {
+  position: static;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.slides-toolbar {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  /* Above the drawer/overlay/tabs (z-index up to 2000) so the toggle button
+     stays usable while navigation is open, instead of getting covered. */
+  z-index: 2001;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.15rem;
+  border-radius: 2rem;
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  box-shadow: var(--md-shadow-z1);
+  transition: box-shadow 0.2s ease, top 0.2s cubic-bezier(0.7, 0.7, 0.1, 1);
+}
+.slides-toolbar:hover {
+  box-shadow: var(--md-shadow-z2);
+}
+.slides-toolbar .md-header__button {
+  margin: 0;
+  border-radius: 50%;
+}
+.slides-toolbar .md-header__button:hover {
+  opacity: 1;
+  background-color: color-mix(in srgb, var(--md-default-fg-color) 10%, transparent);
+}
+
+/* ---------- Footer (site name / slide number) ---------- */
+
+.slides-footer {
+  position: fixed;
+  left: 1rem;
+  bottom: 0.7rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  pointer-events: none;
+}
+
+.slides-footer__logo {
+  display: flex;
+  align-items: center;
+}
+.slides-footer__logo img,
+.slides-footer__logo svg {
+  height: 1.1em;
+  width: auto;
+  fill: currentcolor;
+}
+
+/* Bottom-right is reveal's own prev/next arrows — putting the slide number
+   there overlaps them, so it lives top-left (top-right is the toolbar)
+   instead. */
+.reveal .slide-number {
+  left: 1rem;
+  top: 1rem;
+  right: auto;
+  bottom: auto;
+  z-index: 1000;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  font-family: var(--md-text-font-family, inherit);
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  background-color: var(--md-default-bg-color);
+  box-shadow: var(--md-shadow-z1);
+}
+
+/* ---------- "Press Ctrl+P" hint (only shown in the ?print-pdf on-screen
+   preview — reveal.js only lays slides out for printing, exporting still
+   needs the browser's own print dialog, which surprises people) ---------- */
+
+.print-pdf-hint {
+  display: none;
+}
+
+html.print-pdf .print-pdf-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: fixed;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 2rem;
   background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-size: 0.8rem;
+  font-family: var(--md-text-font-family, inherit);
+  box-shadow: var(--md-shadow-z3);
+  cursor: pointer;
+  animation: print-pdf-hint-bounce 1.6s ease-in-out infinite;
+}
+
+.print-pdf-hint svg {
+  width: 1.1em;
+  height: 1.1em;
+  fill: currentcolor;
+  flex-shrink: 0;
+}
+
+.print-pdf-hint kbd {
+  padding: 0.1em 0.45em;
+  border-radius: 0.3rem;
+  background-color: color-mix(in srgb, var(--md-primary-bg-color) 20%, transparent);
+  font-family: var(--md-code-font-family, monospace);
+}
+
+@keyframes print-pdf-hint-bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -0.4rem);
+  }
+}
+
+@media print {
+  .print-pdf-hint {
+    display: none !important;
+  }
+}
+
+/* ---------- Print styles ---------- */
+
+/* Printed/exported PDFs stay legible on paper regardless of the light/dark
+   mode the presenter had picked on screen. `body` needs its own rule since
+   the `:root > *` block above already sets these on body directly, which
+   would otherwise take precedence over a plain `html.reveal-print` rule. */
+html.reveal-print body {
+  --r-background-color: #fff;
+  --r-main-color: #000000de;
+  --r-heading-color: #000000de;
+}
+
+html.reveal-print .reveal {
+  aspect-ratio: unset;
+}
+
+html.reveal-print .reveal pre code {
+  overflow: unset;
+  text-wrap: auto;
+  max-height: unset;
+}
+
+html.reveal-print .slides-toolbar,
+html.reveal-print .slides-footer,
+html.reveal-print .reveal .slide-number,
+html.reveal-print .md-tabs {
+  display: none;
 }

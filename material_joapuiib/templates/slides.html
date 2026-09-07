@@ -1,119 +1,174 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Page description -->
-    {% if page.meta and page.meta.description %}
-        <meta name="description" content="{{ page.meta.description }}" />
-    {% elif config.site_description %}
-        <meta name="description" content="{{ config.site_description }}" />
-    {% endif %}
+{% extends "base.html" %}
 
-    <!-- Page author -->
-    {% if page.meta and page.meta.author %}
-        <meta name="author" content="{{ page.meta.author }}" />
-    {% elif config.site_author %}
-        <meta name="author" content="{{ config.site_author }}" />
-    {% endif %}
+{% block site_meta %}
+  {{ super() }}
+  {% if page.meta and page.meta.print_title %}
+    <meta name="print-title" content="{{ page.meta.print_title }}" />
+  {% endif %}
+{% endblock %}
 
-    {% if page.meta and page.meta.print_title %}
-        <meta name="print-title" content="{{ page.meta.print_title }}" />
-    {% endif %}
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/monokai.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/white.min.css">
+  <link rel="stylesheet" href="{{ 'stylesheets/slides.css' | url }}">
+{% endblock %}
 
-    <!-- Canonical -->
-    {% if page.canonical_url %}
-        <link rel="canonical" href="{{ page.canonical_url }}" />
-    {% endif %}
+{% block announce %}{% endblock %}
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{ config.theme.favicon | url }}" />
-
-    <!-- Site title -->
-    {% block htmltitle %}
-      {% if page.meta and page.meta.title %}
-        <title>{{ page.meta.title }} - {{ config.site_name }}</title>
-      {% elif page.title and not page.is_homepage %}
-        <title>{{ page.title | striptags }} - {{ config.site_name }}</title>
-      {% else %}
-        <title>{{ config.site_name }}</title>
+{% block header %}
+  {#- bundle.js requires a [data-md-component=header] element to exist (mountHeader);
+      keep a real (but visually suppressed) <header> around our own floating toolbar. -#}
+  <header class="md-header slides-header" data-md-component="header">
+    <div class="slides-toolbar">
+      {% if nav %}
+        <label class="slides-toolbar__item md-header__button md-icon" for="__drawer" title="Navegació">
+          {% set icon = config.theme.icon.menu or "material/menu" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </label>
       {% endif %}
-    {% endblock %}
-
-    {% block styles %}
-        <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/monokai.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/white.min.css">
-        <link rel="stylesheet" href="{{'stylesheets/slides.css' | url}}">
-    {% endblock %}
-
-    <!-- Meta tags from front matter or plugins -->
-    {% if page.meta and page.meta.meta %}
-      {% for tag in page.meta.meta %}
-        <meta
-          {% for key, value in tag.items() %}
-            {{ key }}="{{value}}"
-          {% endfor %}
-        />
-      {% endfor %}
+      {% if config.theme.palette %}
+        {% if not config.theme.palette is mapping %}
+          {% include "partials/palette.html" %}
+        {% endif %}
+      {% endif %}
+      <a href=".?print-pdf" class="slides-toolbar__item md-header__button md-icon" target="_blank" rel="noopener" title="Exporta a PDF">
+        {% include ".icons/fontawesome/regular/file-pdf.svg" %}
+      </a>
+    </div>
+  </header>
+  {% if config.theme.palette %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
     {% endif %}
+  {% endif %}
+{% endblock %}
 
-</head>
+{% block hero %}{% endblock %}
 
-<body>
-
-    {% block content %}
-    <div class="reveal">
-      <div class="header">
-        <a href=".?print-pdf" class="header__item" target="_blank">
-          {% include ".icons/fontawesome/regular/file-pdf.svg" %}
-        </a>
-      </div>
-      <div class="slides">
-        <section data-markdown
-                 data-separator="^\n---\n$"
-                 data-separator-vertical="^\n--\n$"
-                 data-notes="^Note:">
-          <script type="text/template">
-            {{ page.markdown }}
-          </script>
-        </section>
+{#- Only the primary nav (no secondary TOC — a slide deck has no per-page
+    headings worth a sidebar). Forced to always behave as an off-canvas
+    drawer in slides.css, since the fullscreen layout has no room for an
+    inline sidebar column at any width. -#}
+{% block site_nav %}
+  {% if nav %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
       </div>
     </div>
-    {% endblock %}
+  {% endif %}
+{% endblock %}
 
-    {% block scripts %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/markdown/markdown.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/zoom/zoom.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/math/math.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
-        <script src="{{ 'javascript/print-title.js' | url }}"></script>
-    {% endblock %}
-
-    {% block reveal_script %}
-        <script>
-          // Full list of configuration options available here:
-          // https://github.com/hakimel/reveal.js#configuration
-          Reveal.initialize({
-            width: 1920,
-            height: 1080,
-
-            controls: true,
-            progress: true,
-            history: true,
-            center: true,
-            hash: true,
-
-            transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
-            // Learn about plugins: https://revealjs.com/plugins/
-            plugins: [ RevealMarkdown, RevealNotes, RevealZoom, RevealMath, RevealHighlight ]
-          });
+{% block container %}
+  <button type="button" class="print-pdf-hint" title="Imprimeix a PDF">
+    {% include ".icons/fontawesome/solid/print.svg" %}
+    Prem <kbd>Ctrl</kbd> + <kbd>P</kbd> per imprimir a PDF
+  </button>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown
+               data-separator="^\n---\n$"
+               data-separator-vertical="^\n--\n$"
+               data-notes="^Note:">
+        <script type="text/template">
+          {{ page.markdown }}
         </script>
-    {% endblock %}
+      </section>
+    </div>
+  </div>
+{% endblock %}
 
-</body>
-</html>
+{% block footer %}
+  <div class="slides-footer">
+    <span class="slides-footer__logo">{% include "partials/logo.html" %}</span>
+    {{ config.site_name }}
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/zoom/zoom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/math/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
+  <script src="{{ 'javascript/print-title.js' | url }}"></script>
+  <script>
+    var printPdfHint = document.querySelector('.print-pdf-hint');
+    if (printPdfHint) {
+      printPdfHint.addEventListener('click', function () {
+        window.print();
+      });
+    }
+
+    // Ctrl/Cmd+P on the normal deck opens the print-pdf layout in a new tab
+    // instead (reveal.js needs that mode to lay slides out one-per-page for
+    // print; printing the live single-slide view directly looks wrong, and
+    // a new tab keeps the presenter's current slide/position untouched).
+    if (!/print-pdf/.test(location.search)) {
+      window.addEventListener('keydown', function (event) {
+        if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
+          event.preventDefault();
+          var separator = location.search ? '&' : '?';
+          window.open(location.pathname + location.search + separator + 'print-pdf' + location.hash, '_blank');
+        }
+      });
+    }
+  </script>
+  {% block reveal_script %}
+    <script>
+      // Landing straight on ?print-pdf (export button, Ctrl+P, a shared
+      // link) opens the browser's print dialog on its own. reveal.js fires
+      // "pdf-ready" once it has finished computing and applying the
+      // one-slide-per-page print layout (which itself waits on slide
+      // images) — printing any earlier would print the un-paginated view.
+      // Registered before initialize() so it can't fire before we listen.
+      if (/print-pdf/.test(location.search)) {
+        Reveal.on('pdf-ready', function () {
+          requestAnimationFrame(function () {
+            window.print();
+          });
+        });
+      }
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1920,
+        height: 1080,
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        hash: true,
+        slideNumber: 'c/t',
+
+        transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealNotes, RevealZoom, RevealMath, RevealHighlight ]
+      }).then(function () {
+        // Small language chip on every highlighted code block (no filename
+        // metadata is available: fenced code is parsed client-side by
+        // markdown-it, which doesn't support pymdown's `title="..."` syntax).
+        document.querySelectorAll('.reveal pre code[class*="language-"]').forEach(function (code) {
+          var match = code.className.match(/language-(\S+)/);
+          var pre = code.closest('pre');
+          if (!match || !pre || pre.querySelector('.code-lang')) {
+            return;
+          }
+          var badge = document.createElement('span');
+          badge.className = 'code-lang';
+          badge.textContent = match[1];
+          pre.appendChild(badge);
+        });
+      });
+    </script>
+  {% endblock %}
+{% endblock %}
